@@ -8,37 +8,33 @@ def on_button_plus():
     global s
     global op
     if s[-1] in op or len(s) > 15:
-        pass
-    else:
-        s = st(s, "+")
-        label2.config(text=s)
+        s = s[:-1]
+    s = st(s, "+")
+    label2.config(text=s)
 
 def on_button_minus():
     global s
     global op
     if s[-1] in op or len(s) > 15:
-        pass
-    else:
-        s = st(s, "-")
-        label2.config(text=s)
+        s = s[:-1]
+    s = st(s, "-")
+    label2.config(text=s)
 
 def on_button_division():
     global s
     global op
     if s[-1] in op or len(s) > 15:
-        pass
-    else:
-        s = st(s, "/")
-        label2.config(text=s)
+        s = s[:-1]
+    s = st(s, "/")
+    label2.config(text=s)
 
 def on_button_mult():
     global s
     global op
     if s[-1] in op or len(s) > 15:
-        pass
-    else:
-        s = st(s, "x")
-        label2.config(text=s)
+        s = s[:-1]
+    s = st(s, "x")
+    label2.config(text=s)
 
 def on_button_equal():
     global s
@@ -134,6 +130,7 @@ s = ""
 op = {'+', '-', '/', 'x'}
 window = tkinter.Tk()
 window.title("Python Calculator")
+window.resizable(False, False)
 window.geometry("400x400")
 
 label2 = tkinter.Label(window, text=s, font=('Arial', 20))
